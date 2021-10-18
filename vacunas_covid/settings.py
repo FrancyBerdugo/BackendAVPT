@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'asignacion_vacunas'
+    'asignacion_vacunas',
 ]
 
 SIMPLE_JWT = {
@@ -72,7 +72,8 @@ REST_FRAMEWORK = {
 		'rest_framework_simplejwt.authentication.JWTAuthentication',
 	)
 }
-AUTH_USER_MODEL = 'authAppExample.User'
+
+#AUTH_USER_MODEL = 
 
 ROOT_URLCONF = 'vacunas_covid.urls'
 
@@ -101,10 +102,10 @@ WSGI_APPLICATION = 'vacunas_covid.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'vacunas_covid',
-        'USER':'postgres',
-        'PASSWORD':'postgres',
-        'HOST':'localhost',
+        'NAME':'d46k3cbqehffb5',
+        'USER':'lunxcbnavznoue',
+        'PASSWORD':'d7ec33788224217b3f041657e3da94a5105bd25aaaed811bcbf08b20ad549a6c',
+        'HOST':'ec2-18-233-27-224.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
@@ -132,7 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 

@@ -1,4 +1,4 @@
-from django.bd import models
+from django.db import models
 
 class Vacuna(models.Model):
     num_resolucion     = models.IntegerField(primary_key=True)

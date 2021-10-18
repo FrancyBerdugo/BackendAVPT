@@ -1,8 +1,7 @@
-from asignacion_vacunas.models.asignacion import Asignacion
-from asignacion_vacunas.models.
+from asignacion_vacunas.models.asignacion        import Asignacion
 from francy.asignacion_vacunas.models.territorio import Territorio
-from francy.asignacion_vacunas.models.vacuna import Vacuna
-from rest_framework                       import serializers
+from francy.asignacion_vacunas.models.vacuna     import Vacuna
+from rest_framework                              import serializers
 
 class AsignacionSerializer(serializers.ModelSerializer):
     class Meta:
