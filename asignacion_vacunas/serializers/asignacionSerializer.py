@@ -1,7 +1,7 @@
-from asignacion_vacunas.models.asignacion        import Asignacion
-from francy.asignacion_vacunas.models.territorio import Territorio
-from francy.asignacion_vacunas.models.vacuna     import Vacuna
-from rest_framework                              import serializers
+from asignacion_vacunas.models.asignacion import Asignacion
+from asignacion_vacunas.models.territorio import Territorio
+from asignacion_vacunas.models.vacuna     import Vacuna
+from rest_framework                       import serializers
 
 class AsignacionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,7 +27,6 @@ class AsignacionSerializer(serializers.ModelSerializer):
                  'laboratorio_vacuna': vacuna.laboratorio_vacuna,
                  'cantidad'          : vacuna.cantidad,
                  'fecha_resolucion'  : vacuna.fecha_resolucion
-            }
-            
+            }         
 
         }

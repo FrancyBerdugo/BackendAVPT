@@ -1,0 +1,1 @@
+web: gunicorn vacunas_covid.wsgi

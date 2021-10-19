@@ -1,7 +1,7 @@
 from asignacion_vacunas.models.vacuna import Vacuna
 from rest_framework                   import serializers
 
-class Vacuna(serializer.ModelSerializer):
+class VacunaSerializer(serializers.ModelSerializer):
     class Meta:
         model  = Vacuna
         fields = ['laboratorio_vacuna', 'cantidad', 'fecha_resolucion']

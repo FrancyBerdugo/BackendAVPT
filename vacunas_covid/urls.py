@@ -1,21 +1,20 @@
-"""vacunas_covid URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path
+from django.contrib                 import admin
+from django.urls                    import path
+from rest_framework_simplejwt.views import(TokenObtainPairView, TokenRefreshView)
+from asignacion_vacunas             import views as authAppViews
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/',                                 admin.site.urls),
+    path('refresh/',                               TokenRefreshView.as_view()),
+    path('asignacion/',                            authAppViews.AsignacionDetailView.as_view()),
+    path('vacuna/create/',                         authAppViews.VacunaCreateView.as_view()),
+    path('vacuna/<int:user>/<int:pk>/',            authAppViews.VacunaDetailView.as_view()), 
+    path('vacuna/update/<int:user>/<int:pk>/',     authAppViews.VacunaUpdateView.as_view()),
+    path('vacuna/remove/<int:user>/<int:pk>/',     authAppViews.VacunaDeleteView.as_view()),
+    path('vacuna/<int:user>/<int:account>/',       authAppViews.VacunaAsignacionView.as_view()),
+    path('territorio/create/',                     authAppViews.TerritorioCreateView.as_view()),
+    path('territorio/<int:user>/<int:pk>/',        authAppViews.TerritorioDetailView.as_view()),
+    path('territorio/<int:user>/<int:account>/',   authAppViews.TerritorioAsignacionView.as_view()),
+    path('territorio/update/<int:user>/<int:pk>/', authAppViews.TerritorioUpdateView.as_view()),
+    path('territorio/remove/<int:user>/<int:pk>/', authAppViews.TerritorioDeleteView.as_view()),
 ]
