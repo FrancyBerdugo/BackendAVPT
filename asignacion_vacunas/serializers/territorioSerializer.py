@@ -1,7 +1,7 @@
 from asignacion_vacunas.models.territorio import Territorio
 from rest_framework                       import serializers
 
-class Territorio(serializers.ModelSerializer):
+class TerritorioSerializer(serializers.ModelSerializer):
     class Meta:
         model  = Territorio
         fields = ['nom_territorio']
