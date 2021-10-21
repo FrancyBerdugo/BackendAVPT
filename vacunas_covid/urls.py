@@ -14,7 +14,7 @@ urlpatterns = [
     path('vacuna/<int:user>/<int:account>/',       authAppViews.VacunaAsignacionView.as_view()),
     path('territorio/create/',                     authAppViews.TerritorioCreateView.as_view()),
     path('territorio/<int:user>/<int:pk>/',        authAppViews.TerritorioDetailView.as_view()),
-    path('territorio/<int:user>/<int:account>/',   authAppViews.TerritorioAsignacionView.as_view()),
-    path('territorio/update/<int:user>/<int:pk>/', authAppViews.TerritorioUpdateView.as_view()),
-    path('territorio/remove/<int:user>/<int:pk>/', authAppViews.TerritorioDeleteView.as_view()),
+    #path('territorio/<int:user>/<int:account>/',   authAppViews.TerritorioAsignacionView.as_view()),
+    #path('territorio/update/<int:user>/<int:pk>/', authAppViews.TerritorioUpdateView.as_view()),
+    #path('territorio/remove/<int:user>/<int:pk>/', authAppViews.TerritorioDeleteView.as_view()),
 ]

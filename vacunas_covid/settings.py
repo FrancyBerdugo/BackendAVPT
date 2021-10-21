@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-rmp7cud7v))yeapptzls#z!grlj3+t*o16@u@apt7!s6h5d92j
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ALLOWED_ALL_ORIGINS = True
 
 # Application definition
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'asignacion_vacunas',
+    'corsheaders',
 ]
 
 SIMPLE_JWT = {
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 REST_FRAMEWORK = {
