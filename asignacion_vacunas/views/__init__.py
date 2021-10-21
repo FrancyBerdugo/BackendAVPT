@@ -1,3 +1,2 @@
-from .asignacionViewers import AsignacionDetailView
-from .territorioViewers import TerritorioCreateView, TerritorioDetailView
-from .vacunaViewers     import VacunaCreateView, VacunaDetailView, VacunaUpdateView, VacunaDeleteView, VacunaAsignacionView
+from .territorioCreateViewers import TerritorioCreateView
+from .territorioDetailViewers import TerritorioDetailView

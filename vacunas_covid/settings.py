@@ -73,10 +73,11 @@ REST_FRAMEWORK = {
 	),
 	'DEFAULT_AUTHENTICATION_CLASSES': (
 		'rest_framework_simplejwt.authentication.JWTAuthentication',
-	)
+	),
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 
-#AUTH_USER_MODEL = 
+AUTH_USER_MODEL = 'asignacion_vacunas.Territorio'
 
 ROOT_URLCONF = 'vacunas_covid.urls'
 
@@ -105,11 +106,12 @@ WSGI_APPLICATION = 'vacunas_covid.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'d46k3cbqehffb5',
-        'USER':'lunxcbnavznoue',
-        'PASSWORD':'d7ec33788224217b3f041657e3da94a5105bd25aaaed811bcbf08b20ad549a6c',
-        'HOST':'ec2-18-233-27-224.compute-1.amazonaws.com',
+        'NAME':'dectnrlm9kpbnf',
+        'USER':'bovdlafxflymph',
+        'PASSWORD':'c46e6ba5a0982acebd804fc17c6d816f0c529529014a699c7f8ac2e28302e975',
+        'HOST':'ec2-34-199-209-37.compute-1.amazonaws.com',
         'PORT': '5432'
+        #'TEST': {'MIRROR': 'default',},
     }
 }
 
@@ -138,13 +140,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE     = 'UTC'
 
-USE_I18N = True
+USE_I18N      = True
+     
+USE_L10N      = True
 
-USE_L10N = True
-
-USE_TZ = True
+USE_TZ        = True
 
 
 # Static files (CSS, JavaScript, Images)
