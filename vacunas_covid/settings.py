@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib  import Path
 from datetime import timedelta
 import django_heroku
@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-rmp7cud7v))yeapptzls#z!grlj3+t*o16@u@apt7!s6h5d92j
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 CORS_ALLOWED_ALL_ORIGINS = True
 
 # Application definition
@@ -50,9 +51,10 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS'   : False,
     'BLACKLIST_AFTER_ROTATION': True,
     'UPDATE_LAST_LOGIN'       : False,
+
     'ALGORITHM'               : 'HS256',
-    'USER_ID_FIELD'           : 'id',
-    'USER_ID_CLAIM'           : 'user_id',
+    'USER_ID_FIELD'           : 'cod_territorio',
+    'USER_ID_CLAIM'           : 'territorio_cod_territorio',
 }
 
 
@@ -66,6 +68,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+    ]
 
 REST_FRAMEWORK = {
 	'DEFAULT_PERMISSION_CLASSES': (
@@ -111,7 +120,7 @@ DATABASES = {
         'PASSWORD':'c46e6ba5a0982acebd804fc17c6d816f0c529529014a699c7f8ac2e28302e975',
         'HOST':'ec2-34-199-209-37.compute-1.amazonaws.com',
         'PORT': '5432'
-        'TEST': {'MIRROR': 'default',},
+        #'TEST': {'MIRROR': 'default',},
     }
 }
 
@@ -153,9 +162,15 @@ USE_TZ        = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIR = [
+    BASE_DIR / "static",
+]
+MEDIA_URL   = '/media/'
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 django_heroku.settings(locals())

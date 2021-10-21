@@ -1,7 +1,6 @@
 from rest_framework                                      import status, views
 from rest_framework.response                             import Response
 from rest_framework_simplejwt.serializers                import TokenObtainPairSerializer
-
 from asignacion_vacunas.serializers.territorioSerializer import TerritorioSerializer
 
 class TerritorioCreateView(views.APIView):

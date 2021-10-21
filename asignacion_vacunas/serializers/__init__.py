@@ -1,0 +1,2 @@
+from .territorioSerializer import TerritorioSerializer
+from .asignacionSerializer import AsignacionSerializer
