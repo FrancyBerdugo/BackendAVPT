@@ -17,8 +17,8 @@ class TerritorioSerializer(serializers.ModelSerializer):
         territorio = Territorio.objects.get(cod_territorio=obj.cod_territorio)
                
         return {
-            'codigo_territorio': territorio.codigo_territorio,
-            'username'         : territorio.username,
-            'nom_territorio'   : territorio.nom_territorio,                      
+            'cod_territorio': territorio.cod_territorio,
+            'username'      : territorio.username,
+            'nom_territorio': territorio.nom_territorio,                      
             }
                 
