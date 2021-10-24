@@ -32,7 +32,7 @@ class Territorio(AbstractBaseUser, PermissionsMixin):
     nom_territorio = models.CharField('nom_territorio', max_length = 20, default='0')
 
     def save(self, **kwargs):
-        some_salt = 'mMUj0DrIK6vgtdIYepkIxN' 
+        some_salt = 'mMUj0DrIK6vgtdYepkIxN' 
         self.password = make_password(self.password, some_salt)
         super().save(**kwargs)
 

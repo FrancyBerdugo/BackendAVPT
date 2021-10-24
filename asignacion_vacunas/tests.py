@@ -11,21 +11,13 @@ class TestAPI(TestCase):
         response = client.post(
             '/territorio/', 
             {
-                "cod_territorio": "5"
-                "username"      : "ANTIOQUIA",
+                "cod_territorio": "8001"
+                "username"      : "BARRANQUILLA",
                 "password"      : "password_prueba_1",
-                "nom_territorio": "Antioquia",            
-                "asignacion": {                    
-                    "num_resolucion"    : 168
-                    "fecha_resolucion"  : "2021/02/16"
-                    "anio"              : 2021
-                    "laboratorio_vacuna": "PFIZER"
-                    "cantidad"          : 6570
-                    "uso_vacuna"        : "Talento humano en salud primera etapa"
-                    "fecha_corte"       : "2021/10/07"
-                }
+                "nom_territorio": "Barranquilla"               
             }, 
             format='json')
+            
         
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual('refresh' in  response.data.keys(), True)
