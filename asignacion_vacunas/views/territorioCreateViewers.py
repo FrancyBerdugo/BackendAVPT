@@ -5,7 +5,7 @@ from asignacion_vacunas.serializers.territorioSerializer import TerritorioSerial
 
 class TerritorioCreateView(views.APIView):
 
-    def -(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         serializer = TerritorioSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
