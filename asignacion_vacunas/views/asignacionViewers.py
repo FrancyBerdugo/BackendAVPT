@@ -37,7 +37,7 @@ class AsignacionCreateView(generics.CreateAPIView):
         tokenBackend = TokenBackend(algorithm = settings.SIMPLE_JWT['ALGORITHM'])
         valid_data   = tokenBackend.decode(token, verify = False)
 
-        if valid_data['territorio_cod_territorio'] != request.data['territorio_cod_territorio']:
+        if valid_data['territorio'] != request.data['territorio']:
             stringResponse = {'detail' : 'Unauthorized Request'}
             return Response(stringResponse, status = status.HTTP_401_UNAUTHORIZED)
 
