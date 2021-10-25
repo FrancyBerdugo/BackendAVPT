@@ -6,15 +6,15 @@ from django.conf.urls.static        import static
 from django.conf                    import settings
 
 urlpatterns = [
-    path('admin/',                                 admin.site.urls),
-    path('login/',                                 TokenObtainPairView.as_view()),
-    path('refresh/',                               TokenRefreshView.as_view()),    
-    path('territorio/',                            authAppViews.TerritorioCreateView.as_view()),
-    path('territorio/<int:pk>/',                   authAppViews.TerritorioDetailView.as_view()),
-    path('asignacion/',                            authAppViews.AsignacionCreateView.as_view()),
-    path('asignacion/<int:user>/<int:pk>/',        authAppViews.AsignacionTerritorioView.as_view()),
-    path('asignacion/remove/<int:user>/<int:pk>/', authAppViews.AsignacionDeleteView.as_view()),
-    path('asignacion/update/<int:user>/<int:pk>/', authAppViews.AsignacionUpdateView.as_view()),
+    path('admin/',                                       admin.site.urls),
+    path('login/',                                       TokenObtainPairView.as_view()),
+    path('refresh/',                                     TokenRefreshView.as_view()),    
+    path('territorio/',                                  authAppViews.TerritorioCreateView.as_view()),
+    path('territorio/<int:pk>/',                         authAppViews.TerritorioDetailView.as_view()),
+    path('asignacion/',                                  authAppViews.AsignacionCreateView.as_view()),
+    path('asignacion/<int:territorio>/<int:pk>/',        authAppViews.AsignacionTerritorioView.as_view()),
+    path('asignacion/remove/<int:territorio>/<int:pk>/', authAppViews.AsignacionDeleteView.as_view()),
+    path('asignacion/update/<int:territorio>/<int:pk>/', authAppViews.AsignacionUpdateView.as_view()),
 ]
 
 if settings.DEBUG:

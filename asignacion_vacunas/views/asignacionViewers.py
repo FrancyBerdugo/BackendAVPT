@@ -17,11 +17,11 @@ class AsignacionTerritorioView(generics.ListAPIView):
         tokenBackend = TokenBackend(algorithm = settings.SIMPLE_JWT['ALGORITHM'])
         valid_data   = tokenBackend.decode(token,verify = False)
 
-        if valid_data['cod_territorio'] != self.kwargs['territorio']:
+        if valid_data['territorio_cod_territorio'] != self.kwargs['territorio']:
             stringResponse = {'detail':'Unauthorized Request'}
             return Response(stringResponse, status = status.HTTP_401_UNAUTHORIZED)
         
-        queryset = Asignacion.objects.filter(cod_territorio = self.kwargs['territorio'])
+        queryset = Asignacion.objects.filter(territorio_cod_territorio = self.kwargs['territorio'])
         return queryset 
 
     
