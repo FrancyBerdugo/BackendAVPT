@@ -8,7 +8,7 @@ class AsignacionSerializer(serializers.ModelSerializer):
         fields = ['num_resolucion','fecha_resolucion', 'anio', 'laboratorio_vacuna', 'cantidad', 'uso_vacuna', 'fecha_corte'] 
 
     def to_representation(self, obj):        
-        territorio = Territorio.objects.get(cod_territorio=obj.territorio)
+        cod_territorio = Territorio.objects.get(cod_territorio=obj.territorio)
         asignacion = Asignacion.objects.get(id=obj.id)
         
         return {
