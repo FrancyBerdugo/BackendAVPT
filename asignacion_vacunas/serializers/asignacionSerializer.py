@@ -5,7 +5,7 @@ from rest_framework                       import serializers
 class AsignacionSerializer(serializers.ModelSerializer):
     class Meta:
         model  = Asignacion
-        fields = ['num_resolucion','fecha_resolucion', 'anio', 'laboratorio_vacuna', 'cantidad', 'uso_vacuna', 'fecha_corte'] 
+        fields = ['cod_territorio','num_resolucion','fecha_resolucion', 'anio', 'laboratorio_vacuna', 'cantidad', 'uso_vacuna', 'fecha_corte'] 
         
     def to_representation(self, obj):        
         cod_territorio = Territorio.objects.get(cod_territorio=obj.territorio)

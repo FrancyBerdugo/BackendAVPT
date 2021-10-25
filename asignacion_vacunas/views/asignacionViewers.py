@@ -11,9 +11,8 @@ from asignacion_vacunas.serializers.asignacionSerializer import AsignacionSerial
 class AsignacionTerritorioView(generics.ListAPIView):
     serializer_class   =  AsignacionSerializer
     permission_classes =  (IsAuthenticated, )
-    
-    def get_queryset(self): 
-        print("jajajajaja22")                 
+
+    def get_queryset(self):                  
         token        = self.request.META.get('HTTP_AUTHORIZATION')[7:]
         tokenBackend = TokenBackend(algorithm = settings.SIMPLE_JWT['ALGORITHM'])
         valid_data   = tokenBackend.decode(token,verify = False)
@@ -29,16 +28,15 @@ class AsignacionTerritorioView(generics.ListAPIView):
 class AsignacionCreateView(generics.CreateAPIView):
     serializer_class   =  AsignacionSerializer
     permission_classes =  (IsAuthenticated, )
-    
+
     def post(self, request, *args, **kwargs):
-        print("jajajajaja")
         print("Request:", request)
         print("Args:", args)
         print("KWArgs:", kwargs)
         token        = request.META.get('HTTP_AUTHORIZATION')[7:]
         tokenBackend = TokenBackend(algorithm = settings.SIMPLE_JWT['ALGORITHM'])
         valid_data   = tokenBackend.decode(token, verify = False)
-       
+
         if valid_data['territorio_cod_territorio'] != request.data['territorio_cod_territorio']:
             stringResponse = {'detail' : 'Unauthorized Request'}
             return Response(stringResponse, status = status.HTTP_401_UNAUTHORIZED)
@@ -54,9 +52,8 @@ class AsignacionUpdateView(generics.UpdateAPIView):
     serializer_class    = AsignacionSerializer
     permission_classes  = (IsAuthenticated, )
     queryset            = Asignacion.objects.all()
-    
+
     def put(self, request, *args, **kwargs):
-        print("jajajajaja3")
         print("Request:", request)
         print("Args:", args)
         print("KWArgs:", kwargs)
@@ -75,9 +72,8 @@ class AsignacionDeleteView(generics.DestroyAPIView):
     serializer_class    =   AsignacionSerializer
     permission_classes  =   (IsAuthenticated, )
     queryset            =   Asignacion.objects.all()
-    
+
     def delete(self, request, *args, **kwargs):
-        print("jajajajaja4")
         print("Request:", request)
         print("Args:", args)
         print("Kwargs:", kwargs)
