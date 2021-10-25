@@ -12,7 +12,7 @@ urlpatterns = [
     path('territorio/',                            authAppViews.TerritorioCreateView.as_view()),
     path('territorio/<int:pk>/',                   authAppViews.TerritorioDetailView.as_view()),
     path('asignacion/',                            authAppViews.AsignacionCreateView.as_view()),
-    path('asignacion/<int:user>/',                 authAppViews.AsignacionTerritorioView.as_view()),
+    path('asignacion/<int:user>/<int:pk>/',        authAppViews.AsignacionTerritorioView.as_view()),
     path('asignacion/remove/<int:user>/<int:pk>/', authAppViews.AsignacionDeleteView.as_view()),
     path('asignacion/update/<int:user>/<int:pk>/', authAppViews.AsignacionUpdateView.as_view()),
 ]

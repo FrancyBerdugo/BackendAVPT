@@ -45,7 +45,7 @@ class AsignacionCreateView(generics.CreateAPIView):
         serializer.is_valid(raise_exception = True)
         serializer.save()
 
-        return Response("Asignado anteriormente", status = status.HTTP_201_CREATED)
+        return Response("Asignado correctamente", status = status.HTTP_201_CREATED)
 
     
 class AsignacionUpdateView(generics.UpdateAPIView):
