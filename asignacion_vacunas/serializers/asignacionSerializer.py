@@ -6,11 +6,11 @@ class AsignacionSerializer(serializers.ModelSerializer):
     class Meta:
         model  = Asignacion
         fields = ['num_resolucion','fecha_resolucion', 'anio', 'laboratorio_vacuna', 'cantidad', 'uso_vacuna', 'fecha_corte'] 
-
+        
     def to_representation(self, obj):        
         cod_territorio = Territorio.objects.get(cod_territorio=obj.territorio)
         asignacion = Asignacion.objects.get(id=obj.id)
-        
+       
         return {
             'num_resolucion'    : asignacion.num_resolucion,   
             'fecha_resolucion'  : asignacion.fecha_resolucion, 
