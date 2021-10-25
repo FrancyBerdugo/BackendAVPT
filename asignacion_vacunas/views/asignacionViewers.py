@@ -21,7 +21,7 @@ class AsignacionTerritorioView(generics.ListAPIView):
             stringResponse = {'detail':'Unauthorized Request'}
             return Response(stringResponse, status = status.HTTP_401_UNAUTHORIZED)
         
-        queryset = Asignacion.objects.filter(territorio_cod_territorio = self.kwargs['territorio'])
+        queryset = Asignacion.objects.filter(cod_territorio = self.kwargs['territorio'])
         return queryset 
 
     
